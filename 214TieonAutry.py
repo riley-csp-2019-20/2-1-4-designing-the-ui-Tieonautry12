@@ -24,14 +24,23 @@ ent_password.pack()
 
 def test_button():
     print("Abby")
+    frame_auth.tkraise()
 
-button_login = tk.Button(frame_login, text="Login", command = test_button)
+    password = ent_password.get()
+    lbl_display_pass.config(text = password)
+
+button_login = tk.Button(frame_login, text="Login", command=test_button)
 button_login.pack()
-
 
 frame_auth = tk.Frame(root)
 frame_auth.grid(row = 0, column = 0, sticky = "news")
 
+lbl_display_pass = tk.Label(frame_auth, text = "test")
+lbl_display_pass.pack()
+
 frame_login.tkraise()
+
+
+
 
 root.mainloop()
